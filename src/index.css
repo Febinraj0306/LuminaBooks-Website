@@ -1,31 +1,56 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+/* ===== Windows 2000 / Microsoft 2000 Theme ===== */
+@import url('https://fonts.googleapis.com/css2?family=Tahoma:wght@400;700&display=swap');
 
 :root {
-  --bg-primary: #f8fafc;
-  --bg-secondary: #ffffff;
-  --bg-tertiary: #f1f5f9;
-  
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --text-muted: #64748b;
-  
-  --accent-primary: #3b82f6;
-  --accent-secondary: #2563eb;
-  --accent-light: #eff6ff;
-  
-  --border-color: #e2e8f0;
-  
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-hover: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  
-  --radius-sm: 0.375rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 1rem;
-  --radius-xl: 1.5rem;
-  
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Classic Win2000 color palette */
+  --bg-primary: #d4d0c8;         /* Classic Windows gray desktop */
+  --bg-secondary: #ffffff;       /* Window interior white */
+  --bg-tertiary: #ece9d8;        /* Luna-era light beige */
+  --bg-desktop: #008080;         /* Classic teal desktop */
+
+  --text-primary: #000000;
+  --text-secondary: #333333;
+  --text-muted: #666666;
+  --text-on-dark: #ffffff;
+  --text-caption: #ffffff;
+
+  /* Titlebar gradient - Win2000 classic blue-to-navy */
+  --titlebar-start: #000080;
+  --titlebar-end: #1084d0;
+
+  --accent-primary: #000080;     /* Classic Windows navy */
+  --accent-secondary: #0000cc;
+  --accent-light: #c0c0ff;
+  --accent-teal: #008080;
+
+  /* Win2000 3D border system */
+  --border-light: #ffffff;
+  --border-dark: #808080;
+  --border-darker: #404040;
+  --border-color: #808080;
+
+  /* Classic raised/sunken 3D effects */
+  --shadow-raised: inset -1px -1px #000000,
+                   inset 1px 1px #ffffff,
+                   inset -2px -2px #808080,
+                   inset 2px 2px #dfdfdf;
+
+  --shadow-sunken: inset 1px 1px #000000,
+                   inset -1px -1px #ffffff,
+                   inset 2px 2px #808080,
+                   inset -2px -2px #dfdfdf;
+
+  --shadow-sm: 2px 2px 4px rgba(0,0,0,0.4);
+  --shadow-md: 3px 3px 6px rgba(0,0,0,0.5);
+  --shadow-lg: 4px 4px 8px rgba(0,0,0,0.5);
+  --shadow-hover: 4px 4px 8px rgba(0,0,0,0.6);
+
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+
+  --transition: all 0.1s ease;
 }
 
 * {
@@ -35,11 +60,13 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: var(--bg-primary);
+  font-family: 'Tahoma', 'MS Sans Serif', Arial, sans-serif;
+  background-color: var(--bg-desktop);
   color: var(--text-primary);
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
+  line-height: 1.4;
+  font-size: 11px;
+  /* Classic Win2000 teal desktop pattern */
+  background-image: none;
 }
 
 a {
@@ -49,123 +76,125 @@ a {
 
 button {
   cursor: pointer;
-  border: none;
-  background: none;
-  font-family: inherit;
+  font-family: 'Tahoma', 'MS Sans Serif', Arial, sans-serif;
+  font-size: 11px;
 }
 
-/* Typography styles */
 h1, h2, h3, h4, h5, h6 {
+  font-family: 'Tahoma', 'MS Sans Serif', Arial, sans-serif;
   font-weight: 700;
   color: var(--text-primary);
-  line-height: 1.2;
+  line-height: 1.3;
 }
 
-h1 { font-size: 3rem; }
-h2 { font-size: 2.25rem; }
-h3 { font-size: 1.875rem; }
-h4 { font-size: 1.5rem; }
+h1 { font-size: 20px; }
+h2 { font-size: 16px; }
+h3 { font-size: 13px; }
+h4 { font-size: 12px; }
 
 /* Layout Containers */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 8px;
 }
 
 .page-wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: var(--bg-desktop);
 }
 
 .main-content {
   flex: 1;
-  padding-top: 5rem; /* Space for fixed navbar */
+  padding-top: 46px; /* Space for fixed navbar/taskbar */
+  background-color: var(--bg-desktop);
 }
 
-/* Glass effect utilities */
-.glass {
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-/* Common Buttons */
+/* ===== WIN2000 BUTTON STYLE ===== */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-md);
-  font-weight: 600;
+  padding: 4px 14px;
+  font-family: 'Tahoma', 'MS Sans Serif', Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-raised);
+  border: 1px solid transparent;
+  cursor: pointer;
+  gap: 4px;
+  min-height: 23px;
   transition: var(--transition);
-  gap: 0.5rem;
+}
+
+.btn:active {
+  box-shadow: var(--shadow-sunken);
+  padding: 5px 13px 3px 15px;
 }
 
 .btn-primary {
-  background-color: var(--accent-primary);
-  color: white;
-  box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.39);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-raised);
 }
 
 .btn-primary:hover {
-  background-color: var(--accent-secondary);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.23);
+  background-color: #e8e4d8;
 }
 
 .btn-outline {
-  background-color: transparent;
-  border: 2px solid var(--accent-primary);
-  color: var(--accent-primary);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-raised);
 }
 
 .btn-outline:hover {
-  background-color: var(--accent-light);
-  transform: translateY(-2px);
+  background-color: #e8e4d8;
 }
 
 .btn-icon {
-  padding: 0.5rem;
-  border-radius: 50%;
-  background-color: var(--bg-tertiary);
+  padding: 4px;
+  background-color: var(--bg-primary);
   color: var(--text-secondary);
+  box-shadow: var(--shadow-raised);
   transition: var(--transition);
+  min-height: 23px;
+  min-width: 23px;
 }
 
 .btn-icon:hover {
-  background-color: var(--accent-light);
-  color: var(--accent-primary);
+  background-color: #e8e4d8;
 }
 
-/* Book Card */
+/* ===== WIN2000 BOOK CARD ===== */
 .book-card {
   background-color: var(--bg-secondary);
-  border-radius: var(--radius-lg);
-  padding: 1.5rem;
-  box-shadow: var(--shadow-sm);
-  transition: var(--transition);
-  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sunken);
+  padding: 8px;
+  border: 1px solid var(--border-dark);
   display: flex;
   flex-direction: column;
   height: 100%;
+  transition: var(--transition);
 }
 
 .book-card:hover {
-  transform: translateY(-8px);
-  box-shadow: var(--shadow-hover);
+  border-color: var(--accent-primary);
+  background-color: #f0f0ff;
 }
 
 .book-cover {
   width: 100%;
-  height: 250px;
+  height: 200px;
   object-fit: contain;
-  margin-bottom: 1.5rem;
-  border-radius: var(--radius-sm);
+  margin-bottom: 8px;
+  border: 1px solid var(--border-color);
   background-color: var(--bg-tertiary);
-  padding: 1rem;
+  padding: 4px;
 }
 
 .book-info {
@@ -175,8 +204,9 @@ h4 { font-size: 1.5rem; }
 }
 
 .book-title {
-  font-size: 1.125rem;
-  margin-bottom: 0.5rem;
+  font-size: 11px;
+  font-weight: 700;
+  margin-bottom: 4px;
   color: var(--text-primary);
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -186,27 +216,29 @@ h4 { font-size: 1.5rem; }
 }
 
 .book-author {
-  font-size: 0.875rem;
+  font-size: 11px;
   color: var(--text-muted);
-  margin-bottom: 1rem;
+  margin-bottom: 6px;
 }
 
 .book-price {
-  font-size: 1.25rem;
+  font-size: 12px;
   font-weight: 700;
   color: var(--accent-primary);
   margin-top: auto;
+  padding-top: 4px;
+  border-top: 1px solid var(--border-color);
 }
 
-/* Loading Spinner */
+/* ===== Loading Spinner ===== */
 .loader {
   border: 3px solid var(--bg-tertiary);
   border-top: 3px solid var(--accent-primary);
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 24px;
+  height: 24px;
   animation: spin 1s linear infinite;
-  margin: 2rem auto;
+  margin: 16px auto;
 }
 
 @keyframes spin {
@@ -214,12 +246,107 @@ h4 { font-size: 1.5rem; }
   100% { transform: rotate(360deg); }
 }
 
-/* Error Message */
+/* ===== Error Message ===== */
 .error-msg {
-  background-color: #fee2e2;
-  color: #b91c1c;
-  padding: 1rem;
-  border-radius: var(--radius-md);
+  background-color: #ffcccc;
+  color: #cc0000;
+  padding: 8px;
+  border: 1px solid #cc0000;
+  box-shadow: var(--shadow-sunken);
   text-align: center;
-  margin: 2rem 0;
+  margin: 16px 0;
+  font-size: 11px;
+}
+
+/* ===== WIN2000 WINDOW CHROME ===== */
+.win-window {
+  background-color: var(--bg-primary);
+  box-shadow: var(--shadow-raised);
+  border: 1px solid transparent;
+  margin: 8px;
+}
+
+.win-titlebar {
+  background: linear-gradient(to right, var(--titlebar-start), var(--titlebar-end));
+  padding: 3px 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 22px;
+}
+
+.win-titlebar-title {
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
+  font-family: 'Tahoma', Arial, sans-serif;
+}
+
+.win-titlebar-buttons {
+  display: flex;
+  gap: 2px;
+}
+
+.win-title-btn {
+  width: 16px;
+  height: 14px;
+  background-color: var(--bg-primary);
+  box-shadow: var(--shadow-raised);
+  font-size: 9px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-primary);
+  border: none;
+  font-family: 'Tahoma', Arial, sans-serif;
+  line-height: 1;
+}
+
+.win-title-btn:hover {
+  background-color: #e8e4d8;
+}
+
+.win-title-btn.close-btn:hover {
+  background-color: #cc0000;
+  color: white;
+}
+
+.win-title-btn:active {
+  box-shadow: var(--shadow-sunken);
+}
+
+/* ===== STATUS BAR ===== */
+.win-statusbar {
+  background-color: var(--bg-primary);
+  box-shadow: var(--shadow-sunken);
+  padding: 2px 6px;
+  font-size: 11px;
+  color: var(--text-secondary);
+  border-top: 1px solid var(--border-dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ===== SECTION DIVIDER (like Win2000 group box) ===== */
+.win-groupbox {
+  border: 1px solid var(--border-dark);
+  box-shadow: inset 0 0 0 1px var(--border-light);
+  padding: 8px;
+  margin-bottom: 16px;
+  background-color: var(--bg-secondary);
+}
+
+.win-groupbox-title {
+  font-size: 11px;
+  font-weight: 700;
+  background-color: var(--bg-secondary);
+  padding: 0 4px;
+  margin-left: 8px;
+  position: relative;
+  top: -8px;
+  display: inline-block;
+  color: var(--text-primary);
 }
