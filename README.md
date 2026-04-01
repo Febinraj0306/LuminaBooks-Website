@@ -1,6 +1,6 @@
 # React + Vite
 
-Live Demo🚀 -  https://e-commerce-website-eta-three-10.vercel.app/
+Live Demo🚀 -  lumina-books-website.vercel.app
 
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
