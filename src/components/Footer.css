@@ -1,144 +1,93 @@
-/* ===== Win2000 Taskbar-style Footer ===== */
-
 .footer {
-  background: linear-gradient(to bottom, #1084d0, #000080);
-  border-top: 2px solid #000040;
-  padding-top: 0;
-  margin-top: 8px;
-}
-
-.footer-taskbar {
-  background: linear-gradient(to bottom, #1084d0, #000080);
-  display: flex;
-  align-items: stretch;
-  height: 30px;
-  border-bottom: 1px solid #000060;
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  padding-top: 4rem;
+  margin-top: 4rem;
 }
 
 .footer-content {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: 8px;
-  margin-bottom: 0;
-  padding: 8px;
-  background-color: #d4d0c8;
+  gap: 4rem;
+  margin-bottom: 3rem;
 }
 
 .footer-brand {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 13px;
-  font-weight: 700;
-  color: #000080;
-  letter-spacing: 0;
-  margin-bottom: 6px;
-  font-family: 'Tahoma', Arial, sans-serif;
+  gap: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--accent-primary);
+  letter-spacing: -0.5px;
+  margin-bottom: 1rem;
 }
 
 .footer-desc {
-  color: #333333;
-  line-height: 1.5;
-  margin-bottom: 8px;
-  font-size: 11px;
-  font-family: 'Tahoma', Arial, sans-serif;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
 }
 
 .social-links {
   display: flex;
-  gap: 6px;
+  gap: 1rem;
 }
 
 .social-links a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 26px;
-  height: 22px;
-  background-color: #d4d0c8;
-  box-shadow: inset -1px -1px #000000,
-              inset 1px 1px #ffffff,
-              inset -2px -2px #808080,
-              inset 2px 2px #dfdfdf;
-  color: #000000;
-  transition: background-color 0.1s;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+  transition: var(--transition);
 }
 
 .social-links a:hover {
-  background-color: #000080;
-  color: #ffffff;
-  box-shadow: inset 1px 1px #000000,
-              inset -1px -1px #ffffff,
-              inset 2px 2px #808080,
-              inset -2px -2px #dfdfdf;
-  transform: none;
+  background-color: var(--accent-light);
+  color: var(--accent-primary);
+  transform: translateY(-2px);
 }
 
 .footer-links-section {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
-}
-
-.link-group {
-  background-color: #ffffff;
-  padding: 6px 8px;
-  box-shadow: inset 1px 1px #808080,
-              inset -1px -1px #ffffff;
+  gap: 2rem;
 }
 
 .link-group h3 {
-  font-size: 11px;
-  font-weight: 700;
-  margin-bottom: 6px;
-  color: #000000;
-  font-family: 'Tahoma', Arial, sans-serif;
-  border-bottom: 1px solid #808080;
-  padding-bottom: 3px;
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
 }
 
 .link-group a {
   display: block;
-  color: #000080;
-  margin-bottom: 3px;
-  font-size: 11px;
-  font-family: 'Tahoma', Arial, sans-serif;
-  text-decoration: underline;
-  transition: color 0.1s;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+  transition: var(--transition);
 }
 
 .link-group a:hover {
-  color: #0000ff;
-  transform: none;
+  color: var(--accent-primary);
+  transform: translateX(4px);
 }
 
-/* Win2000-style taskbar bottom bar */
 .footer-bottom {
   text-align: center;
-  padding: 4px 8px;
-  background: linear-gradient(to bottom, #000080, #000060);
-  color: #ffffff;
-  font-size: 11px;
-  font-family: 'Tahoma', Arial, sans-serif;
-  border-top: 1px solid #000040;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.footer-clock {
-  background-color: rgba(0,0,0,0.2);
-  padding: 2px 8px;
-  box-shadow: inset 1px 1px rgba(0,0,0,0.3), inset -1px -1px rgba(255,255,255,0.1);
-  font-size: 11px;
-  font-family: 'Tahoma', Arial, sans-serif;
-  color: #ffffff;
+  padding: 1.5rem;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-size: 0.875rem;
 }
 
 @media (max-width: 768px) {
   .footer-content {
     grid-template-columns: 1fr;
-    gap: 8px;
+    gap: 2rem;
   }
   
   .footer-links-section {
